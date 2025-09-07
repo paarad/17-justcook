@@ -48,7 +48,7 @@ export default function Home() {
           Turn Your Ingredients Into Chef-Level Recipes
         </h1>
         <p className="text-xl text-stone-600 max-w-2xl mx-auto">
-          Tell us what's in your fridge or pantry, and we'll create a complete recipe with steps, 
+          Tell us what&apos;s in your fridge or pantry, and we&apos;ll create a complete recipe with steps, 
           substitutions, and nutrition info — in seconds.
         </p>
       </div>
@@ -56,9 +56,9 @@ export default function Home() {
       {/* Main Input Form */}
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle>What's in your kitchen?</CardTitle>
+          <CardTitle>What&apos;s in your kitchen?</CardTitle>
           <CardDescription>
-            List your ingredients, and we'll work our magic
+            List your ingredients, and we&apos;ll work our magic
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -168,10 +168,10 @@ export default function Home() {
             <Button 
               onClick={handleJustCook}
               disabled={!ingredients.trim() || loading}
-              className="w-full md:w-auto text-lg px-8 py-3 bg-stone-900 hover:bg-stone-800"
+              className="w-full md:w-auto text-lg px-8 py-3 bg-stone-900 hover:bg-stone-800 transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100"
               size="lg"
             >
-              <Utensils className="mr-2 h-5 w-5" />
+              <Utensils className={`mr-2 h-5 w-5 ${loading ? 'animate-pulse' : ''}`} />
               {loading ? "Cooking up your recipe..." : "Just Cook"}
             </Button>
           </div>
@@ -180,9 +180,9 @@ export default function Home() {
 
       {/* Features Preview */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-        <Card>
+        <Card className="transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
           <CardContent className="p-6 text-center">
-            <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors group-hover:bg-stone-200">
               <ChefHat className="h-6 w-6 text-stone-700" />
             </div>
             <h3 className="font-semibold text-stone-900 mb-2">Smart Recipes</h3>
@@ -192,9 +192,9 @@ export default function Home() {
           </CardContent>
         </Card>
         
-        <Card>
+        <Card className="transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
           <CardContent className="p-6 text-center">
-            <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors group-hover:bg-stone-200">
               <Users className="h-6 w-6 text-stone-700" />
             </div>
             <h3 className="font-semibold text-stone-900 mb-2">Substitutions</h3>
@@ -204,9 +204,9 @@ export default function Home() {
           </CardContent>
         </Card>
         
-        <Card>
+        <Card className="transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
           <CardContent className="p-6 text-center">
-            <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors group-hover:bg-stone-200">
               <Utensils className="h-6 w-6 text-stone-700" />
             </div>
             <h3 className="font-semibold text-stone-900 mb-2">Nutrition Info</h3>

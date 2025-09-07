@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { ChefHat, ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -35,7 +35,7 @@ export default function RecipesPage() {
           </div>
           <CardTitle className="mb-4">No Saved Recipes Yet</CardTitle>
           <CardDescription className="mb-6 max-w-md mx-auto">
-            Start creating amazing recipes with your ingredients, and they'll appear here for easy access later.
+            Start creating amazing recipes with your ingredients, and they&apos;ll appear here for easy access later.
           </CardDescription>
           <Button onClick={() => router.push('/')}>
             Create Your First Recipe

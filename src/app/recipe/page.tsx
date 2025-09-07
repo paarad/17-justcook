@@ -1,16 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
-import { ArrowLeft, Clock, Users, Utensils, Download, Share2, BookOpen } from "lucide-react";
+import { ArrowLeft, Clock, Users, Utensils, Download, Share2, BookOpen, ChefHat } from "lucide-react";
 import { Recipe } from "../api/generate-recipe/route";
 
-export default function RecipePage() {
+function RecipePageContent() {
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -115,9 +115,21 @@ export default function RecipePage() {
     return (
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-900 mx-auto mb-4"></div>
-          <h2 className="text-xl font-semibold text-stone-900 mb-2">Cooking up your recipe...</h2>
-          <p className="text-stone-600">This might take a moment while our chef AI works its magic.</p>
+          <div className="relative">
+            <div className="animate-spin rounded-full h-16 w-16 border-4 border-stone-200 border-t-stone-900 mx-auto mb-6"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <ChefHat className="h-6 w-6 text-stone-700 pulse-cooking" />
+            </div>
+          </div>
+          <h2 className="text-2xl font-semibold text-stone-900 mb-3">Cooking up your recipe...</h2>
+          <p className="text-stone-600 mb-6">Our chef AI is crafting the perfect recipe from your ingredients.</p>
+          
+          {/* Loading skeleton */}
+          <div className="max-w-2xl mx-auto space-y-4">
+            <div className="h-4 bg-stone-200 rounded shimmer"></div>
+            <div className="h-4 bg-stone-200 rounded shimmer w-3/4 mx-auto"></div>
+            <div className="h-4 bg-stone-200 rounded shimmer w-1/2 mx-auto"></div>
+          </div>
         </div>
       </div>
     );
@@ -253,9 +265,9 @@ export default function RecipePage() {
             <Card>
               <CardHeader>
                 <CardTitle>Smart Substitutions</CardTitle>
-                <CardDescription>
-                  Don't have something? Here are some alternatives
-                </CardDescription>
+                                 <CardDescription>
+                   Don&apos;t have something? Here are some alternatives
+                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
@@ -378,5 +390,20 @@ export default function RecipePage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function RecipePage() {
+  return (
+    <Suspense fallback={
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto mb-4"></div>
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">Loading...</h2>
+        </div>
+      </div>
+    }>
+      <RecipePageContent />
+    </Suspense>
   );
 } 

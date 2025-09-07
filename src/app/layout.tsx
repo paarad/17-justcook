@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 import { ChefHat } from "lucide-react";
 
@@ -31,12 +32,12 @@ export default function RootLayout({
                 <span className="text-xl font-semibold text-stone-900">JustCook</span>
               </div>
               <nav className="hidden md:flex items-center space-x-6">
-                <a href="/" className="text-stone-600 hover:text-stone-900 transition-colors">
+                <Link href="/" className="text-stone-600 hover:text-stone-900 transition-colors">
                   Home
-                </a>
-                <a href="/recipes" className="text-stone-600 hover:text-stone-900 transition-colors">
+                </Link>
+                <Link href="/recipes" className="text-stone-600 hover:text-stone-900 transition-colors">
                   Saved Recipes
-                </a>
+                </Link>
               </nav>
             </div>
           </div>

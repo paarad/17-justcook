@@ -12,6 +12,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "JustCook - Turn Your Ingredients Into Chef-Level Recipes",
   description: "JustCook helps you turn whatever ingredients you have into a chef-level recipe — in seconds. Simple, smart, and beautifully minimal.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

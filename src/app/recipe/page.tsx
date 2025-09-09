@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
-import { Recipe } from "../api/generate-recipe/route";
+import { ArrowLeft, Clock, Users, Utensils, Download, BookOpen, ChefHat } from "lucide-react";import { Recipe } from "../api/generate-recipe/route";
 
 function RecipePageContent() {
   const [recipe, setRecipe] = useState<Recipe | null>(null);

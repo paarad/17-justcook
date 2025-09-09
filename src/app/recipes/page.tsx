@@ -20,8 +20,8 @@ export default function RecipesPage() {
       </Button>
 
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-stone-900 mb-4">Saved Recipes</h1>
-        <p className="text-lg text-stone-600">
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">Saved Recipes</h1>
+        <p className="text-lg text-gray-600">
           Your personal collection of chef-level recipes
         </p>
       </div>
@@ -29,8 +29,8 @@ export default function RecipesPage() {
       <Card className="text-center py-12">
         <CardContent>
           <div className="flex justify-center mb-6">
-            <div className="p-4 bg-stone-100 rounded-full">
-              <ChefHat className="h-12 w-12 text-stone-700" />
+            <div className="p-4 bg-gray-100 rounded-full">
+              <ChefHat className="h-12 w-12 text-gray-700" />
             </div>
           </div>
           <CardTitle className="mb-4">No Saved Recipes Yet</CardTitle>
@@ -43,7 +43,7 @@ export default function RecipesPage() {
         </CardContent>
       </Card>
 
-      <div className="mt-12 text-center text-sm text-stone-500">
+      <div className="mt-12 text-center text-sm text-gray-500">
         <p>💡 <strong>Coming Soon:</strong> Save, organize, and share your favorite recipes with authentication.</p>
       </div>
     </div>

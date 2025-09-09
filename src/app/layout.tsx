@@ -25,20 +25,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} font-sans antialiased bg-stone-50 min-h-screen`}
+        className={`${inter.variable} font-sans antialiased bg-gray-50 min-h-screen`}
       >
-        <header className="border-b border-stone-200 bg-white">
+        <header className="border-b border-gray-200 bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center space-x-2">
-                <ChefHat className="h-6 w-6 text-stone-700" />
-                <span className="text-xl font-semibold text-stone-900">JustCook</span>
+                <ChefHat className="h-6 w-6 text-gray-800" />
+                <span className="text-xl font-semibold text-gray-900">JustCook</span>
               </div>
               <nav className="hidden md:flex items-center space-x-6">
-                <Link href="/" className="text-stone-600 hover:text-stone-900 transition-colors">
+                <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
                   Home
                 </Link>
-                <Link href="/recipes" className="text-stone-600 hover:text-stone-900 transition-colors">
+                <Link href="/recipes" className="text-gray-600 hover:text-gray-900 transition-colors">
                   Saved Recipes
                 </Link>
               </nav>

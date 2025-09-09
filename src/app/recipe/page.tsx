@@ -7,7 +7,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
-import { ArrowLeft, Clock, Users, Utensils, Download, Share2, BookOpen, ChefHat } from "lucide-react";
 import { Recipe } from "../api/generate-recipe/route";
 
 function RecipePageContent() {
@@ -116,19 +115,19 @@ function RecipePageContent() {
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="text-center">
           <div className="relative">
-            <div className="animate-spin rounded-full h-16 w-16 border-4 border-stone-200 border-t-stone-900 mx-auto mb-6"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-4 border-gray-200 border-t-stone-900 mx-auto mb-6"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <ChefHat className="h-6 w-6 text-stone-700 pulse-cooking" />
+              <ChefHat className="h-6 w-6 text-gray-700 pulse-cooking" />
             </div>
           </div>
-          <h2 className="text-2xl font-semibold text-stone-900 mb-3">Cooking up your recipe...</h2>
-          <p className="text-stone-600 mb-6">Our chef AI is crafting the perfect recipe from your ingredients.</p>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-3">Cooking up your recipe...</h2>
+          <p className="text-gray-600 mb-6">Our chef AI is crafting the perfect recipe from your ingredients.</p>
           
           {/* Loading skeleton */}
           <div className="max-w-2xl mx-auto space-y-4">
-            <div className="h-4 bg-stone-200 rounded shimmer"></div>
-            <div className="h-4 bg-stone-200 rounded shimmer w-3/4 mx-auto"></div>
-            <div className="h-4 bg-stone-200 rounded shimmer w-1/2 mx-auto"></div>
+            <div className="h-4 bg-gray-200 rounded shimmer"></div>
+            <div className="h-4 bg-gray-200 rounded shimmer w-3/4 mx-auto"></div>
+            <div className="h-4 bg-gray-200 rounded shimmer w-1/2 mx-auto"></div>
           </div>
         </div>
       </div>
@@ -173,10 +172,10 @@ function RecipePageContent() {
         
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
           <div className="flex-1">
-            <h1 className="text-3xl font-bold text-stone-900 mb-2">{recipe.title}</h1>
-            <p className="text-lg text-stone-600 mb-4">{recipe.summary}</p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">{recipe.title}</h1>
+            <p className="text-lg text-gray-600 mb-4">{recipe.summary}</p>
             
-            <div className="flex flex-wrap gap-4 text-sm text-stone-600">
+            <div className="flex flex-wrap gap-4 text-sm text-gray-600">
               <div className="flex items-center">
                 <Clock className="h-4 w-4 mr-1" />
                 Total: {recipe.totalTime} min
@@ -196,10 +195,6 @@ function RecipePageContent() {
             <Button onClick={generateShoppingList} variant="outline">
               <Download className="mr-2 h-4 w-4" />
               Shopping List
-            </Button>
-            <Button variant="outline">
-              <Share2 className="mr-2 h-4 w-4" />
-              Share
             </Button>
           </div>
         </div>
@@ -243,13 +238,13 @@ function RecipePageContent() {
               <div className="space-y-4">
                 {recipe.instructions.map((instruction) => (
                   <div key={instruction.step} className="flex gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 bg-stone-900 text-white rounded-full flex items-center justify-center text-sm font-medium">
+                    <div className="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-medium">
                       {instruction.step}
                     </div>
                     <div className="flex-1">
-                      <p className="text-stone-800">{instruction.instruction}</p>
+                      <p className="text-gray-800">{instruction.instruction}</p>
                       {instruction.time && (
-                        <p className="text-sm text-stone-500 mt-1">
+                        <p className="text-sm text-gray-500 mt-1">
                           ~{instruction.time} minutes
                         </p>
                       )}
@@ -272,8 +267,8 @@ function RecipePageContent() {
               <CardContent>
                 <div className="space-y-3">
                   {recipe.substitutions.map((sub, index) => (
-                    <div key={index} className="p-3 bg-stone-50 rounded-lg">
-                      <p className="font-medium text-stone-900 mb-1">
+                    <div key={index} className="p-3 bg-gray-50 rounded-lg">
+                      <p className="font-medium text-gray-900 mb-1">
                         Instead of <span className="font-semibold">{sub.original}</span>:
                       </p>
                       <div className="flex flex-wrap gap-1 mb-2">
@@ -284,7 +279,7 @@ function RecipePageContent() {
                         ))}
                       </div>
                       {sub.note && (
-                        <p className="text-sm text-stone-600">{sub.note}</p>
+                        <p className="text-sm text-gray-600">{sub.note}</p>
                       )}
                     </div>
                   ))}
@@ -300,7 +295,7 @@ function RecipePageContent() {
                 <CardTitle>Plating Tips</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-stone-700">{recipe.platingTips}</p>
+                <p className="text-gray-700">{recipe.platingTips}</p>
               </CardContent>
             </Card>
           )}
@@ -318,7 +313,7 @@ function RecipePageContent() {
               <div className="space-y-2">
                 {recipe.ingredients.map((ingredient, index) => (
                   <div key={index} className="flex justify-between items-center py-1">
-                    <span className="text-stone-800">
+                    <span className="text-gray-800">
                       {ingredient.name}
                       {ingredient.optional && (
                         <Badge variant="outline" className="ml-2 text-xs">
@@ -326,7 +321,7 @@ function RecipePageContent() {
                         </Badge>
                       )}
                     </span>
-                    <span className="text-stone-600 text-sm">
+                    <span className="text-gray-600 text-sm">
                       {adjustIngredientAmount(ingredient.amount, recipe.servings, currentServings)} {ingredient.unit}
                     </span>
                   </div>
@@ -380,7 +375,7 @@ function RecipePageContent() {
                 <div className="space-y-2">
                   {recipe.missingIngredients.map((item, index) => (
                     <div key={index} className="flex items-center">
-                      <span className="text-stone-700">{item}</span>
+                      <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
                 </div>

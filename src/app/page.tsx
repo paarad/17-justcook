@@ -40,31 +40,31 @@ export default function Home() {
       {/* Hero Section */}
       <div className="text-center mb-12">
         <div className="flex justify-center mb-6">
-          <div className="p-4 bg-stone-100 rounded-full">
-            <ChefHat className="h-12 w-12 text-stone-700" />
+          <div className="p-4 bg-gray-100 rounded-full">
+            <ChefHat className="h-12 w-12 text-gray-700" />
           </div>
         </div>
-        <h1 className="text-4xl font-bold text-stone-900 mb-4">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
           Turn Your Ingredients Into Chef-Level Recipes
         </h1>
-        <p className="text-xl text-stone-600 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
           Tell us what&apos;s in your fridge or pantry, and we&apos;ll create a complete recipe with steps, 
           substitutions, and nutrition info — in seconds.
         </p>
       </div>
 
       {/* Main Input Form */}
-      <Card className="mb-8">
-        <CardHeader>
-          <CardTitle>What&apos;s in your kitchen?</CardTitle>
-          <CardDescription>
+      <Card className="mb-8 shadow-lg border-gray-200">
+        <CardHeader className="bg-gray-50 border-b border-gray-200">
+          <CardTitle className="text-gray-900">What&apos;s in your kitchen?</CardTitle>
+          <CardDescription className="text-gray-600">
             List your ingredients, and we&apos;ll work our magic
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-6 p-6">
           {/* Ingredients Input */}
           <div>
-            <label htmlFor="ingredients" className="block text-sm font-medium text-stone-700 mb-2">
+            <label htmlFor="ingredients" className="block text-sm font-medium text-gray-700 mb-2">
               Your Ingredients
             </label>
             <Textarea
@@ -72,7 +72,7 @@ export default function Home() {
               placeholder="e.g., pasta, canned tomatoes, onion, garlic, olive oil..."
               value={ingredients}
               onChange={(e) => setIngredients(e.target.value)}
-              className="min-h-[100px]"
+              className="min-h-[100px] border-gray-300 focus:border-gray-500"
             />
           </div>
 
@@ -80,11 +80,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {/* Diet */}
             <div>
-              <label className="block text-sm font-medium text-stone-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Dietary Preference
               </label>
               <Select value={diet} onValueChange={setDiet}>
-                <SelectTrigger>
+                <SelectTrigger className="border-gray-300">
                   <SelectValue placeholder="Any diet" />
                 </SelectTrigger>
                 <SelectContent>
@@ -101,11 +101,11 @@ export default function Home() {
 
             {/* Cuisine */}
             <div>
-              <label className="block text-sm font-medium text-stone-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Cuisine Style
               </label>
               <Select value={cuisine} onValueChange={setCuisine}>
-                <SelectTrigger>
+                <SelectTrigger className="border-gray-300">
                   <SelectValue placeholder="Any cuisine" />
                 </SelectTrigger>
                 <SelectContent>
@@ -124,12 +124,12 @@ export default function Home() {
 
             {/* Time */}
             <div>
-              <label className="block text-sm font-medium text-stone-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 <Clock className="inline h-4 w-4 mr-1" />
                 Max Time (minutes)
               </label>
               <Select value={time} onValueChange={setTime}>
-                <SelectTrigger>
+                <SelectTrigger className="border-gray-300">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -144,12 +144,12 @@ export default function Home() {
 
             {/* Servings */}
             <div>
-              <label className="block text-sm font-medium text-stone-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 <Users className="inline h-4 w-4 mr-1" />
                 Servings
               </label>
               <Select value={servings} onValueChange={setServings}>
-                <SelectTrigger>
+                <SelectTrigger className="border-gray-300">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -168,7 +168,7 @@ export default function Home() {
             <Button 
               onClick={handleJustCook}
               disabled={!ingredients.trim() || loading}
-              className="w-full md:w-auto text-lg px-8 py-3 bg-stone-900 hover:bg-stone-800 transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100"
+              className="w-full md:w-auto text-lg px-8 py-3 bg-gray-900 hover:bg-gray-800 transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100"
               size="lg"
             >
               <Utensils className={`mr-2 h-5 w-5 ${loading ? 'animate-pulse' : ''}`} />
@@ -180,37 +180,37 @@ export default function Home() {
 
       {/* Features Preview */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-        <Card className="transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
+        <Card className="transition-all duration-200 hover:shadow-lg hover:-translate-y-1 border-gray-200">
           <CardContent className="p-6 text-center">
-            <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors group-hover:bg-stone-200">
-              <ChefHat className="h-6 w-6 text-stone-700" />
+            <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors group-hover:bg-gray-200">
+              <ChefHat className="h-6 w-6 text-gray-700" />
             </div>
-            <h3 className="font-semibold text-stone-900 mb-2">Smart Recipes</h3>
-            <p className="text-stone-600 text-sm">
+            <h3 className="font-semibold text-gray-900 mb-2">Smart Recipes</h3>
+            <p className="text-gray-600 text-sm">
               Get complete recipes with steps, timing, and chef tips
             </p>
           </CardContent>
         </Card>
         
-        <Card className="transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
+        <Card className="transition-all duration-200 hover:shadow-lg hover:-translate-y-1 border-gray-200">
           <CardContent className="p-6 text-center">
-            <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors group-hover:bg-stone-200">
-              <Users className="h-6 w-6 text-stone-700" />
+            <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors group-hover:bg-gray-200">
+              <Users className="h-6 w-6 text-gray-700" />
             </div>
-            <h3 className="font-semibold text-stone-900 mb-2">Substitutions</h3>
-            <p className="text-stone-600 text-sm">
+            <h3 className="font-semibold text-gray-900 mb-2">Substitutions</h3>
+            <p className="text-gray-600 text-sm">
               Smart suggestions for missing ingredients and swaps
             </p>
           </CardContent>
         </Card>
         
-        <Card className="transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
+        <Card className="transition-all duration-200 hover:shadow-lg hover:-translate-y-1 border-gray-200">
           <CardContent className="p-6 text-center">
-            <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors group-hover:bg-stone-200">
-              <Utensils className="h-6 w-6 text-stone-700" />
+            <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors group-hover:bg-gray-200">
+              <Utensils className="h-6 w-6 text-gray-700" />
             </div>
-            <h3 className="font-semibold text-stone-900 mb-2">Nutrition Info</h3>
-            <p className="text-stone-600 text-sm">
+            <h3 className="font-semibold text-gray-900 mb-2">Nutrition Info</h3>
+            <p className="text-gray-600 text-sm">
               Macros per serving with live updates
             </p>
           </CardContent>
